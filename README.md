@@ -1,24 +1,25 @@
-# Lämpötila- ja Vuotovahti (Raspberry Pi Pico W)
+# Lämpötila- ja Vuotovahti
 
-Tämä projekti mittaa **lämpötilaa** ja **havaitsee vesivuotoja** Raspberry Pi Pico W -mikrokontrollerilla.  
-Datan voi nähdä reaaliajassa web-sivulla, ja siinä on myös yksinkertainen ohjauspaneeli laitteen asetuksille.
+Laite mittaa **lämpötilaa** ja **havaitsee vesivuotoja** Raspberry Pi Pico W -mikrokontrollerilla.  
+Datan voi nähdä reaaliajassa selainpohjaisessa front endissa, josta löytyy myös ohjauspaneeli laitteen asetuksille.
 
 ## Toiminnot
 - Mittaa lämpötilan lusikasta rakennetulla anturilla  
 - Havaitsee vuodon foliosta rakennetulla anturilla  
 - Näyttää arvot ThingSpeakissä ja piirtää kaavion Google Chartsilla  
 - LEDit näyttävät lämpötilan ja vuototilanteen  
-- LCD-näyttö näyttää lämpötilan ja varoituksen  
+- LCD-näyttö näyttää lämpötilan ja varoituksen ylikuumenemisesta. 
 - Web-käyttöliittymästä voi:
+  - Tarkastella laitteen lähettämää dataa 
   - asettaa vuotosensorin raja-arvon  
   - kalibroida anturin kuivana/märkänä  
   - tarkistaa Picon nykyiset asetukset  
 
 ## Käyttö
-1. Lataa `main.py` Picoon ja täytä WiFi-tiedot tiedoston alkuun.  
-2. Käynnistä Pico. Sarjamonitori näyttää laitteen IP-osoitteen.  
+1. Kytke laite virtalähteeseen.  
+2. Odota, että laite käynnistyy itsestään. Sarjamonitori näyttää laitteen IP-osoitteen.  
 3. Avaa `chart.html` selaimessa.  
-4. Syötä Picon IP-ohjauspaneeliin, niin sivu voi kommunikoida laitteen kanssa.  
+4. Syötä Picon IP-ohjauspaneeliin, jotta voit hallita laitteen asetuksia ohjauspaneelin avulla.  
 5. Kaavio näyttää ThingSpeakistä haetut lämpötila- ja vuotoarvot.
 
 ## Web-ohjauspaneelin toiminnot
