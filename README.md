@@ -69,3 +69,35 @@ Threshold-arvo voidaan säätää ja kalibroida käyttöliittymästä.
 
 ## Yhteenveto
 Projekti havainnollistaa yksinkertaisen IoT-järjestelmän, jossa mikrokontrolleri mittaa ympäristöä ja välittää datan pilveen, ja käyttäjä voi tarkastella tietoja web-selaimen kautta sekä muuttaa asetuksia etänä.
+
+
+## Testausraportti
+
+Projektin toiminnallisuus testattiin useilla testitapauksilla, jotka varmistivat antureiden, LEDien, LCD-näytön, ThingSpeak-lähetyksen ja käyttöliittymän toiminnan. Kaikki testit läpäistiin onnistuneesti.
+
+### Testitulokset
+
+| Testitapaus | Kuvaus | Odotettu toiminta | Tulos |
+|-------------|--------|-------------------|--------|
+| Jännitteen mittaus | Lämpötilan muutos muuttaa mitattua jännitettä | Jännite reagoi lämpötilaan | ✔️ Pass |
+| Lämpötilan laskenta | Jännite muunnetaan lämpötilaksi siirtofunktion avulla | Lämpötila lasketaan oikein | ✔️ Pass |
+| Lämpötilan näyttö LCD:ssä | Lämpötila näkyy reaaliajassa | Lämpötila päivittyy LCD:lle | ✔️ Pass |
+| Lämpötilaledien toiminta | Ledit syttyvät/vilkkuvat oikeissa lämpötiloissa | LED-palkki vastaa lämpötilaa | ✔️ Pass |
+| Kosteusledit | Vihreä = kuiva, punainen = vuoto | LEDit vaihtuvat tilan mukaan | ✔️ Pass |
+| Datan lähetys ThingSpeakiin | Laite lähettää mittausarvot pilveen | Data näkyy ThingSpeakissä | ✔️ Pass |
+| Datan visualisointi UI:ssa | Mittausdata piirtyy kaavioon | Kaavio näkyy käyttöliittymässä | ✔️ Pass |
+| Anturin ohjaus käyttöliittymästä | Threshold ja kalibrointi toimivat | Arvot säädettävissä frontista | ✔️ Pass |
+
+### Yhteenveto
+
+Testauksen perusteella:
+
+- Lämpötila-anturi reagoi johdonmukaisesti lämpötilan muutoksiin  
+- LEDit toimivat suunnitellun lämpötila- ja kosteuskartan mukaan  
+- LCD päivittyy reaaliajassa ja varoitukset näkyvät selkeästi  
+- Vuotoanturi tunnistaa märän/kuivan tilan luotettavasti  
+- ThingSpeak-yhteys ja käyttöliittymän kaaviot toimivat vakaasti  
+- Käyttöliittymä ohjaa Picoa onnistuneesti (threshold + kalibrointi)
+
+Kaikki projektin keskeiset toiminnallisuudet toimivat suunnitellusti.
+
