@@ -1,4 +1,4 @@
-# Lämpötila- ja Vuotovahti
+# Lämpötila- ja vuotovahti
 
 Laite mittaa **lämpötilaa** ja **havaitsee vesivuotoja** Raspberry Pi Pico W -mikrokontrollerilla.  
 Datan voi nähdä reaaliajassa selainpohjaisessa front endissa, josta löytyy myös ohjauspaneeli laitteen asetuksille.
@@ -26,7 +26,7 @@ Datan voi nähdä reaaliajassa selainpohjaisessa front endissa, josta löytyy my
 
 Laitteessa on yhteensä seitsemän LEDiä: viisi lämpötilan ilmaisuun ja kaksi kosteuden havaitsemiseen. LEDien tarkoitus on antaa käyttäjälle nopea visuaalinen tilannekuva laitteen mittaamista arvoista.
 
-### Lämpötilaa ilmaisevat LEDit (5 kpl)
+### Lämpötilaa ilmaisevat punaiset LEDit (5 kpl)
 
 LEDit syttyvät lämpötilan noustessa seuraavien raja-arvojen mukaan:
 
@@ -65,7 +65,9 @@ Threshold-arvo voidaan säätää ja kalibroida käyttöliittymästä.
 ## Tiedostot
 - `main.py` – Picon ohjelma (anturit, LEDit, ThingSpeak-lähetys, HTTP-komennot)  
 - `chart.html` – web-näkymä  
-- `chart.js` – kaavion piirtäminen ja Picon ohjaus  
+- `chart.js` – kaavion piirtäminen ja Picon ohjaus
+- `lcd_api(1).py` - LCD-kirjasto
+- `pico_i2c_lcd(1).py` - LCD-kirjasto
 
 ## Yhteenveto
 Projekti havainnollistaa yksinkertaisen IoT-järjestelmän, jossa mikrokontrolleri mittaa ympäristöä ja välittää datan pilveen, ja käyttäjä voi tarkastella tietoja web-selaimen kautta sekä muuttaa asetuksia etänä.
