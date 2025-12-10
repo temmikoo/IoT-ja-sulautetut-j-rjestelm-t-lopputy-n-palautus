@@ -22,6 +22,36 @@ Datan voi nähdä reaaliajassa selainpohjaisessa front endissa, josta löytyy my
 4. Syötä Picon IP-ohjauspaneeliin, jotta voit hallita laitteen asetuksia ohjauspaneelin avulla.  
 5. Kaavio näyttää ThingSpeakistä haetut lämpötila- ja vuotoarvot.
 
+## LEDien tulkinta
+
+Laitteessa on yhteensä seitsemän LEDiä: viisi lämpötilan ilmaisuun ja kaksi kosteuden havaitsemiseen. LEDien tarkoitus on antaa käyttäjälle nopea visuaalinen tilannekuva laitteen mittaamista arvoista.
+
+### Lämpötilaa ilmaisevat LEDit (5 kpl)
+
+LEDit syttyvät lämpötilan noustessa seuraavien raja-arvojen mukaan:
+
+| Lämpötila | LED-tila |
+|-----------|----------|
+| 1–10 °C   | 1 LED palaa |
+| 11–20 °C  | 2 LEDiä palaa |
+| 21–30 °C  | 3 LEDiä palaa |
+| 31–40 °C  | 4 LEDiä palaa |
+| 41–50 °C  | 5 LEDiä palaa |
+| > 50 °C   | 5 LEDiä vilkkuu (ylikuumeneminen) |
+
+Tämän avulla käyttäjä näkee yhdellä silmäyksellä lämpötilan suuntaa antavasti ilman näyttöä tai kaaviota.
+
+### Kosteutta ilmaisevat LEDit (2 kpl)
+
+Kosteusanturi reagoi kosteuden lisääntymiseen niin, että sen ADC-arvo laskee. LEDien toiminta:
+
+| Tila | LED-reaktio |
+|------|--------------|
+| Ei vuotoa | Vihreä LED palaa |
+| Vuoto havaittu (ADC < threshold) | Punainen LED palaa, vihreä sammuu |
+
+Threshold-arvo voidaan säätää ja kalibroida käyttöliittymästä.
+
 ## Web-ohjauspaneelin toiminnot
 - **Set Threshold**  
   Asettaa vuotoanturin raja-arvon.
